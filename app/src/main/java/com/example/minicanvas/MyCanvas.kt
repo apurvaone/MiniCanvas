@@ -23,6 +23,9 @@ class MyCanvas(context: Context) : View (context) {
 
     private val touchTolerance = ViewConfiguration.get(context).scaledTouchSlop
 
+    private lateinit var frame: Rect
+    val inset = 40
+
 
 
     private val drawColor=  ResourcesCompat.getColor(resources,R.color.colorPaint,null)
@@ -55,12 +58,17 @@ class MyCanvas(context: Context) : View (context) {
         extraCanvas= Canvas(extraBitmap)
         extraCanvas.drawColor(backgroundColor)
 
+        val inset=40
+        frame= Rect(inset,inset,width-inset,height-inset)
+
 
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawBitmap(extraBitmap,0f,0f,null)
+        canvas.drawRect(frame,paint)
+
 
 
     }
