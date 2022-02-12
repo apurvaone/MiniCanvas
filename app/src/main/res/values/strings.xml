@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">MiniCanvas</string>
+    
+    
+    <string name="canvasContentDescription">  Mini Paint app, draw any fuckin thing </string>
 </resources>
